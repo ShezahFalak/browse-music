@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <style>
+            body{
+                background: linear-gradient(270deg,rgb(226, 177, 226),rgb(89, 32, 128));
+            }
+            p{
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+                font-weight: bold;
+                text-align: center;
+                font-size: 35px;
+                font-style: oblique;
+                padding-top: 5px;
+            }
+            button {
+    background: linear-gradient(135deg, #b17cea, #d9bce1);
+    color: rgb(29, 2, 61);
+    font-weight: bold;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: solid rgb(17, 17, 17);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(106, 17, 203, 0.4);
+}
+            input {
+    width: 100%;
+    padding: 12px;
+    max-width: 500px;
+    font-size: 16px;
+    border: 2px solid #a36bf5;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #822ee6;
+    box-shadow: 0 0 10px rgba(131, 38, 230, 0.5);
+}
+.container{
+   display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between elements */
+    justify-content: center;
+    
+}
+select{
+    font-size: 16px;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #b17cea, #d9bce1);
+    color: rgb(29, 2, 61);
+    font-weight: bold;
+    border:solid black;
+    border-radius: 8px;
+}
+ 
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.result-item {
+  display: flex;
+  gap: 20px;
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  align-items: center;
+}
+
+.result-item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.result-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-info span {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.result-info a {
+  font-size: 18px;
+  color: #ffe27a;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+        </style>
+    </head>
+    <body>
+        <p>Find Your Favourite Tracks</p>
+        
+        <div class="container">
+        <div>
+        <input type="text" id="searchid"  placeholder="Enter search term">
+        </div>
+        <div>
+        <select id="searchType">
+            <option value="song">Song</option>
+            <option value="album">Album</option>
+            <option value="artist">Artist</option>
+        </select>
+
+        <button onclick="fetchSongs()">Search</button>
+        </div>
+        </div>
+        <div id="results" class="result"></div>
+
+        <script src="songs.js"></script>
+    </body>
+</html>
